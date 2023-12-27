@@ -31,24 +31,29 @@ const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
 const list = document.createElement("ul");
 
 // * 2.A (for...of loop)
-for (const technology of technologies) {
-  const liEl = document.createElement("li");
-  //   if you want to have the text content for your element
-  liEl.textContent = technology; //'<li>HTML</li>'
-  list.append(liEl);
-}
+// for (const technology of technologies) {
+//   const liEl = document.createElement("li");
+//   //   if you want to have the text content for your element
+//   liEl.textContent = technology; //'<li>HTML</li>'
+//   list.append(liEl);
+// }
 // container.append(list); // append() -> adds one or more elements after all children of the container element.
 
 //* 2.B (map)
-// const listContent = technologies.map(technology => `<li>${technology}</li>`).join('');
+// const listContent = technologies
+//   .map((technology) => `<li>${technology}</li>`)
+//   .join("");
 // console.log(listContent);
 // // list.innerHTML = listContent;
-// list.insertAdjacentHTML('beforeend', listContent); // present-day method for adding a string with HTML tags
+// list.insertAdjacentHTML("beforeend", listContent); // present-day method for adding a string with HTML tags
 // container.append(list);
 
 //* 2.C (reduce)
-// const listContent = technologies.reduce((acc, technology) => (acc += `<li>${technology}</li>`), '');
-// list.insertAdjacentHTML('beforeend', listContent);
+// const listContent = technologies.reduce(
+//   (acc, technology) => (acc += `<li>${technology}</li>`),
+//   ""
+// );
+// list.insertAdjacentHTML("beforeend", listContent);
 // container.append(list);
 
 //! ====================================
@@ -64,31 +69,31 @@ Create several buttons based on an array of objects using createElement
 
 */
 
-// const colors = [
-//   {
-//     label: 'red',
-//     color: '#FF0000',
-//   },
-//   {
-//     label: 'green',
-//     color: '#00FF00',
-//   },
-//   {
-//     label: 'blue',
-//     color: '#0000FF',
-//   },
-//   {
-//     label: 'yellow',
-//     color: '#FFFF00',
-//   },
-// ];
+const colors = [
+  {
+    label: "red",
+    color: "#FF0000",
+  },
+  {
+    label: "green",
+    color: "#00FF00",
+  },
+  {
+    label: "blue",
+    color: "#0000FF",
+  },
+  {
+    label: "yellow",
+    color: "#FFFF00",
+  },
+];
 
-// colors.forEach(({ label, color }) => {
-//   const buttonEl = document.createElement('button');
-//   buttonEl.style.backgroundColor = color; // add background color
-//   buttonEl.classList.add('indents'); // add class name
-//   buttonEl.style.margin = '5px'; // add margin
-//   buttonEl.textContent = label; // add text content for the element(button)
-//   buttonEl.style.fontSize = '24px';
-//   container.append(buttonEl);
-// });
+colors.forEach(({ label, color }) => {
+  const buttonEl = document.createElement("button");
+  buttonEl.style.backgroundColor = color; // add background color
+  buttonEl.classList.add("indents"); // add class name
+  buttonEl.style.margin = "5px"; // add margin
+  buttonEl.textContent = label; // add text content for the element(button)
+  buttonEl.style.fontSize = "24px";
+  container.append(buttonEl);
+});
